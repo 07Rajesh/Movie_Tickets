@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 namespace Movie_Tickets.Controllers
 {
    
-    public class ProcudersController : Controller
+    public class ProducersController : Controller
     {
         private readonly AppDbContext _context;
 
-        public ProcudersController(AppDbContext context)
+        public ProducersController(AppDbContext context)
         {
             _context = context;
         }
@@ -21,7 +21,7 @@ namespace Movie_Tickets.Controllers
         {
             var allProducers = await _context.Producers.ToListAsync();
 
-            return View();
+            return View(allProducers);
         }
     }
 }
